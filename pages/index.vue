@@ -59,13 +59,13 @@
       }
     },
     async asyncData() {
-      const posts = await axios.get('http://localhost:4444');
+      const posts = await axios.get('http://localhost:4444/list');
       return {posts: posts.data}
     },
     methods: {
       async refresh(){
         this.posts = []
-        const posts = await axios.get('http://localhost:4444');
+        const posts = await axios.get('http://localhost:4444/list');
         this.posts = posts.data
       },
       async handleSubmit() {
